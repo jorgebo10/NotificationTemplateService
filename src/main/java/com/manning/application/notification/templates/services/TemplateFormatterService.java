@@ -1,4 +1,4 @@
-package com.manning.application.notification.templates.controllers;
+package com.manning.application.notification.templates.services;
 
 import com.manning.application.notification.templates.model.NotificationParameter;
 import com.manning.application.notification.templates.model.NotificationTemplateFormatterReq;
@@ -41,7 +41,7 @@ public class TemplateFormatterService {
                                 NotificationParameter::getNotificationParameterValue));
     }
 
-    NotificationTemplateFormatterRes getNotificationTemplateFormatterRes(
+    public NotificationTemplateFormatterRes getNotificationTemplateFormatterRes(
             NotificationTemplateFormatterReq notificationTemplateFormatterReq) {
         NotificationTemplateFormatterRes notificationTemplateRes = new NotificationTemplateFormatterRes();
         Map<String, Object> notificationParametersMap = paramsToMap(notificationTemplateFormatterReq);
