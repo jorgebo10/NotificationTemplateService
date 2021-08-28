@@ -1,0 +1,19 @@
+server:
+  port: 8082
+spring:
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+  application:
+    name: NotificationTemplateServices
+  config:
+    import: optional:consul:localhost:8500
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        instanceId: ${spring.application.name}:${random.value}
+        healthCheckPath: /api/notifications/templates/healthcheck
+        healthCheckInterval: 20s
+  zipkin:
+    baseUrl: http://localhost:9411
