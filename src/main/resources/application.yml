@@ -1,6 +1,9 @@
 server:
   port: 8082
 spring:
+  sleuth:
+    web:
+      skipPattern: (^cleanup.*|.+favicon.*)
   jackson:
     property-naming-strategy: SNAKE_CASE
   application:
