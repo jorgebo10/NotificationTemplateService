@@ -2,7 +2,7 @@ package com.manning.application.notification.templates.services;
 
 import com.manning.application.notification.templates.model.NotificationParameter;
 import com.manning.application.notification.templates.model.NotificationTemplateFormatterReq;
-import com.manning.application.notification.templates.model.NotificationTemplateFormatterRes;
+import com.manning.application.notification.templates.model.NotificationTemplateFormatterRsp;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.text.StringSubstitutor;
 import org.springframework.stereotype.Service;
@@ -41,9 +41,9 @@ public class TemplateFormatterService {
                                 NotificationParameter::getNotificationParameterValue));
     }
 
-    public NotificationTemplateFormatterRes getNotificationTemplateFormatterRes(
+    public NotificationTemplateFormatterRsp getNotificationTemplateFormatterRes(
             NotificationTemplateFormatterReq notificationTemplateFormatterReq) {
-        NotificationTemplateFormatterRes notificationTemplateRes = new NotificationTemplateFormatterRes();
+        NotificationTemplateFormatterRsp notificationTemplateRes = new NotificationTemplateFormatterRsp();
         Map<String, Object> notificationParametersMap = paramsToMap(notificationTemplateFormatterReq);
 
         if (notificationTemplateFormatterReq.getNotificationMode().equals("EMAIL")) {

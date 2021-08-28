@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public final class NotificationTemplateFormatterRes {
+public final class NotificationTemplateFormatterRsp {
     private String status;
     private String statusDescription;
     private String emailContent;
