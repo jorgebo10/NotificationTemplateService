@@ -20,3 +20,9 @@ spring:
         healthCheckInterval: 20s
   zipkin:
     baseUrl: http://localhost:9411
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
+    enabled-by-default: true
